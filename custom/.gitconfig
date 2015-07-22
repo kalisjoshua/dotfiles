@@ -1,0 +1,16 @@
+[alias]
+	count = rev-list --count HEAD
+	lg = log -F --graph --pretty=format:'%Cgreen%h%Creset -%d %s (%Cgreen%ad%Creset) %ae'
+	squash = !sh -c 'git rebase -i $(git merge-base HEAD $1)' -
+	who = shortlog -s --
+[color]
+	ui = auto
+[http]
+	sslVerify = false
+[push]
+	default = simple
+[user]
+	name = Joshua T Kalis
+	email = kalisjoshua@gmail.com
+[core]
+	excludesfile = ~/.gitignore
