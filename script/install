@@ -1,0 +1,8 @@
+#!/bin/bash
+
+for src in $(pwd)/custom/.*
+do
+  if [ ! -d $src ]; then
+    ln -fs $src $HOME/$(basename $src)
+  fi
+done
