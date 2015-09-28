@@ -10,7 +10,7 @@ layout cinema 'Google Chrome'           move screenSizeX*2/5;0 screenSizeX*3/5;s
 layout cinema 'Terminal'                move 0;0 screenSizeX*3/5;screenSizeY 1
 layout cinema 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2 1
 
-layout cinema 'Microsoft Outlook'       corner top-right resize:.9*screenSizeX;screenSizeY 0
+layout cinema 'Microsoft Outlook'       corner top-left resize:.9*screenSizeX;screenSizeY 0
 layout cinema 'Microsoft Communicator'  corner top-left resize:300;screenSizeY 0
 layout cinema 'Microsoft Lync'          corner top-left resize:300;screenSizeY 0
 layout cinema 'HipChat'                 corner top-right resize:.6*screenSizeX;screenSizeY 0
