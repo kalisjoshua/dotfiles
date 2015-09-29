@@ -1,6 +1,7 @@
 set relativenumber    " relative line numbering
 
-set ruler
+set hls               " highlight search terms, by default
+set ruler             " show column/line number in status bar
 set autoindent        " auto indent next line based on previous line
 set expandtab         " insert spaces instead of tabs
 set foldmethod=indent " folding type
