@@ -13,3 +13,5 @@ export JAVA_HOME="$(/usr/libexec/java_home -v 1.7)"
 export M2_HOME=/Users/jkalis/Maven/apache-maven-3.3.3
 export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
+
+alias ls=ls -ao
