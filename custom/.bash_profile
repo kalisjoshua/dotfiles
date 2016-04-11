@@ -14,4 +14,9 @@ export M2_HOME=/Users/jkalis/Maven/apache-maven-3.3.3
 export M2=$M2_HOME/bin
 export PATH=$M2:$PATH
 
+branch_purge () {
+    git fetch --prune
+    git branch --merged master | grep -v 'master$' | xargs git branch -d
+}
+
 alias ls="ls -ao1"
