@@ -16,6 +16,7 @@ layout cinema 'Messages'                move screenSizeX/4;screenSizeY/2 screenS
 layout cinema 'Microsoft Outlook'       corner top-left resize:.9*screenSizeX;screenSizeY 0
 layout cinema 'Microsoft Communicator'  corner top-left resize:300;screenSizeY 0
 layout cinema 'Microsoft Lync'          corner top-left resize:300;screenSizeY 0
+layout cinema 'Microsoft Teams'         corner top-right resize:.6*screenSizeX;screenSizeY 0
 layout cinema 'HipChat'                 corner top-right resize:.6*screenSizeX;screenSizeY 0
 
 

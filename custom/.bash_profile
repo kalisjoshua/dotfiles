@@ -19,4 +19,4 @@ branch_purge () {
     git branch --merged master | grep -v 'master$' | xargs git branch -d
 }
 
-alias ls="ls -1aFGhl"
+alias lx="ls -1AFGhl"
