@@ -1,8 +1,10 @@
 # only need be run once
 # echo "set completion-ignore-case On" > ~/.inputrc
 
+USER_BASE_PYTHON=$(python -m site --user-base)
+
 # add common locations to PATH
-export PATH=./venv/bin:~/bin:/usr/local/bin:$PATH
+export PATH=./venv/bin:~/bin:/usr/local/bin:$USER_BASE_PYTHON/bin:$PATH
 
 # add git tab completion
 source /usr/local/git/contrib/completion/git-completion.bash
