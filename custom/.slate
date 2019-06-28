@@ -1,33 +1,38 @@
 config defaultToCurrentScreen false
 
+# Display Orientation - zero-indexed list of displays
+alias screen-main 0
+alias screen-secondary 1
+
 # Layouts
 #########
 
 # ------------------------------------------ #
-default cinema resolutions:2880x1800;2560x1440
+default cinema resolutions:2560x1600;2560x1440
 # ------------------------------------------ #
-layout cinema 'Google Chrome'           move screenSizeX*2/5;0 screenSizeX*3/5;screenSizeY
-layout cinema 'Firefox'                 move screenSizeX*2/5;0 screenSizeX*3/5;screenSizeY
+layout cinema 'Google Chrome'           move screenSizeX*2/5;0 screenSizeX*3/5;screenSizeY ${screen-main}
+layout cinema 'Firefox'                 move screenSizeX*2/5;0 screenSizeX*3/5;screenSizeY ${screen-main}
 
-layout cinema 'Terminal'                move screenSizeX*3/5;0 screenSizeX*2/5;screenSizeY
-layout cinema 'Atom'                    move 0;0 screenSizeX*3/5;screenSizeY 1
-layout cinema 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2 1
+layout cinema 'Terminal'                move screenSizeX*3/5;0 screenSizeX*2/5;screenSizeY ${screen-main}
+layout cinema 'Atom'                    move 0;0 screenSizeX*3/5;screenSizeY ${screen-main}
+layout cinema 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2 ${screen-main}
 
-layout cinema 'Microsoft Outlook'       corner top-left resize:.9*screenSizeX;screenSizeY 0
-layout cinema 'Microsoft Teams'         corner top-right resize:.7*screenSizeX;screenSizeY 0
+layout cinema 'Microsoft Outlook'       corner top-left resize:.9*screenSizeX;screenSizeY ${screen-secondary}
+layout cinema 'Microsoft Teams'         corner top-right resize:.7*screenSizeX;screenSizeY ${screen-secondary}
 
 
 # ---------------------------------- #
-default internal resolutions:2880x1800
+default internal resolutions:2560x1600
 # ---------------------------------- #
-layout internal 'Google Chrome'           move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY 0
-layout internal 'Firefox'                 move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY 0
+layout internal 'Google Chrome'           move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
+layout internal 'Firefox'                 move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
 
-layout internal 'Terminal'                move 0;0 screenSizeX*4/5;screenSizeY 0
-layout internal 'Atom'                    move 0;0 screenSizeX*4/5;screenSizeY 0
-layout internal 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2 0
+layout internal 'Terminal'                move 0;0 screenSizeX*4/5;screenSizeY
+layout internal 'Atom'                    move 0;0 screenSizeX*4/5;screenSizeY
+layout internal 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2
 
-layout internal 'Microsoft Outlook'       corner top-right resize:.9*screenSizeX;screenSizeY 0
+layout internal 'Microsoft Outlook'       corner top-right resize:.9*screenSizeX;screenSizeY
+layout internal 'Microsoft Teams'         corner top-right resize:.7*screenSizeX;screenSizeY
 
 # Key-bindings
 ##############
