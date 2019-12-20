@@ -1,11 +1,14 @@
 config defaultToCurrentScreen false
 
 # Display Orientation - zero-indexed list of displays
-alias screen-main 0
-alias screen-secondary 1
+alias screen-main 1
+alias screen-secondary 0
 
 # Layouts
 #########
+
+alias hGrid screenSizeX/12
+alias fullH screenSizeY
 
 # ------------------------------------------ #
 default cinema resolutions:2560x1600;2560x1440
@@ -28,17 +31,32 @@ layout internal 'Google Chrome'           move screenSizeX*1/5;0 screenSizeX*4/5
 layout internal 'Firefox'                 move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
 
 layout internal 'Terminal'                move 0;0 screenSizeX*4/5;screenSizeY
-layout internal 'Atom'                    move 0;0 screenSizeX*4/5;screenSizeY
+layout internal 'Atom'                    move 0;0 screenSizeX;screenSizeY
 layout internal 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2
 
-layout internal 'Microsoft Outlook'       corner top-right resize:.9*screenSizeX;screenSizeY
+layout internal 'Microsoft Outlook'       corner top-left resize:.9*screenSizeX;screenSizeY
 layout internal 'Microsoft Teams'         corner top-right resize:.7*screenSizeX;screenSizeY
+
+
+# ---------------------------------- #
+default OneLarge resolutions:3480x1600
+# ---------------------------------- #
+layout OneLarge 'Firefox'                 move ${hGrid}*6;0 ${hGrid}*6;${fullH}
+
+layout OneLarge 'Atom'                    move ${hGrid}*4;0 ${hGrid}*5;${fullH}
+layout OneLarge 'Messages'                move ${hGrid}*5;${fullH}/2 ${hGrid}*2;${fullH}/2
+layout OneLarge 'Terminal'                move 0;0 ${hGrid}*5;${fullH}
+
+layout OneLarge 'Microsoft Outlook'       move 0;0 ${hGrid}*5;${fullH}*5/8
+layout OneLarge 'Microsoft Teams'         move 0;${fullH}*3/8 ${hGrid}*5;${fullH}*5/8
 
 # Key-bindings
 ##############
 
-bind 1:alt;ctrl layout cinema
+bind 1:alt;ctrl layout OneLarge
 bind 2:alt;ctrl layout internal
+bind 9:alt;ctrl grid
+bind 0:alt;ctrl relaunch
 
 
 # More info at - https://github.com/jigish/slate
