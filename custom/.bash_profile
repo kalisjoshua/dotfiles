@@ -1,6 +1,8 @@
 # only need be run once
 # echo "set completion-ignore-case On" > ~/.inputrc
 
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 USER_BASE_PYTHON=$(python -m site --user-base)
 
 # add common locations to PATH
