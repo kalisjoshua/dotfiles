@@ -2,7 +2,7 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # add git tab completion
-source $(which git)/contrib/completion/git-completion.bash
+source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
 
 source ~/.prompt
 
