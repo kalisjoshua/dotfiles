@@ -39,7 +39,7 @@ layout internal 'Microsoft Teams'         corner top-right resize:.7*screenSizeX
 
 
 # ---------------------------------- #
-default OneLarge resolutions:3480x1600
+default OneLarge resolutions:3008x1692
 # ---------------------------------- #
 layout OneLarge 'Firefox'                 move ${hGrid}*6;0 ${hGrid}*6;${fullH}
 
@@ -47,8 +47,8 @@ layout OneLarge 'Atom'                    move ${hGrid}*4;0 ${hGrid}*5;${fullH}
 layout OneLarge 'Messages'                move ${hGrid}*5;${fullH}/2 ${hGrid}*2;${fullH}/2
 layout OneLarge 'Terminal'                move 0;0 ${hGrid}*5;${fullH}
 
-layout OneLarge 'Microsoft Outlook'       move 0;0 ${hGrid}*5;${fullH}*5/8
-layout OneLarge 'Microsoft Teams'         move 0;${fullH}*3/8 ${hGrid}*5;${fullH}*5/8
+layout OneLarge 'Microsoft Teams':MAIN_FIRST         move 0;0 ${hGrid}*5;${fullH}*5/8
+layout OneLarge 'Microsoft Outlook':MAIN_FIRST       move 0;${fullH}*3/8 ${hGrid}*5;${fullH}*5/8
 
 # Key-bindings
 ##############
