@@ -41,7 +41,7 @@ layout internal 'Microsoft Teams'         corner top-right resize:.7*screenSizeX
 # ---------------------------------- #
 default OneLarge resolutions:3008x1692
 # ---------------------------------- #
-layout OneLarge 'Firefox'                 move ${hGrid}*6;0 ${hGrid}*6;${fullH}
+layout OneLarge 'Firefox'                 move ${hGrid}*6;0 screenSizeX-${hGrid}*6;${fullH}
 
 layout OneLarge 'Atom'                    move ${hGrid}*4;0 ${hGrid}*5;${fullH}
 layout OneLarge 'Messages'                move ${hGrid}*5;${fullH}/2 ${hGrid}*2;${fullH}/2
