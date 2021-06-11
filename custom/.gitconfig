@@ -5,8 +5,6 @@
 	who = shortlog -s --
 [color]
 	ui = auto
-[http]
-	sslVerify = false
 [push]
 	default = simple
 [user]
@@ -14,9 +12,3 @@
 	email = kalisjoshua@gmail.com
 [core]
 	excludesfile = ~/.gitignore
-[difftool "sourcetree"]
-	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
-	path = 
-[mergetool "sourcetree"]
-	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
-	trustExitCode = true
