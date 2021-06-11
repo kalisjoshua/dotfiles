@@ -1,57 +1,48 @@
 config defaultToCurrentScreen false
 
-# Display Orientation - zero-indexed list of displays
-alias screen-main 1
-alias screen-secondary 0
-
-# Layouts
-#########
-
 alias hGrid screenSizeX/12
-alias fullH screenSizeY
-
-# ------------------------------------------ #
-default cinema resolutions:2560x1600;2560x1440
-# ------------------------------------------ #
-layout cinema 'Google Chrome'           move screenSizeX*2/5;0 screenSizeX*3/5;screenSizeY ${screen-main}
-layout cinema 'Firefox'                 move screenSizeX*2/5;0 screenSizeX*3/5;screenSizeY ${screen-main}
-
-layout cinema 'Terminal'                move screenSizeX*3/5;0 screenSizeX*2/5;screenSizeY ${screen-main}
-layout cinema 'Atom'                    move 0;0 screenSizeX*3/5;screenSizeY ${screen-main}
-layout cinema 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2 ${screen-main}
-
-layout cinema 'Microsoft Outlook'       corner top-left resize:.9*screenSizeX;screenSizeY ${screen-secondary}
-layout cinema 'Microsoft Teams'         corner top-right resize:.7*screenSizeX;screenSizeY ${screen-secondary}
+alias height screenSizeY
+alias leftH ${height}*5/8
+alias leftW ${hGrid}*5
 
 
-# ---------------------------------- #
+
+################################################################################
+# Layouts
+################################################################################
+
+
+# ------------------------------------------------------------------------------
 default internal resolutions:2560x1600
-# ---------------------------------- #
-layout internal 'Google Chrome'           move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
-layout internal 'Firefox'                 move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
+# ==============================================================================
+layout internal 'Google Chrome':REPEAT    move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
+layout internal 'Firefox':REPEAT          move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
 
-layout internal 'Terminal'                move 0;0 screenSizeX*4/5;screenSizeY
-layout internal 'Atom'                    move 0;0 screenSizeX;screenSizeY
+layout internal 'Terminal':REPEAT         move 0;0 screenSizeX*4/5;screenSizeY
+layout internal 'Atom':REPEAT             move 0;0 screenSizeX;screenSizeY
 layout internal 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2
 
-layout internal 'Microsoft Outlook'       corner top-left resize:.9*screenSizeX;screenSizeY
-layout internal 'Microsoft Teams'         corner top-right resize:.7*screenSizeX;screenSizeY
+layout internal 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST         corner top-right resize:.7*screenSizeX;screenSizeY | nudge +0 +0
+layout internal 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST       corner top-left resize:.9*screenSizeX;screenSizeY | nudge +0 +0
 
 
-# ---------------------------------- #
+# ------------------------------------------------------------------------------
 default OneLarge resolutions:3008x1692
-# ---------------------------------- #
-layout OneLarge 'Firefox'                 move ${hGrid}*6;0 screenSizeX-${hGrid}*6;${fullH}
+# ==============================================================================
+layout OneLarge 'Firefox':REPEAT          move ${hGrid}*6;0 screenSizeX-${hGrid}*6;${height}
 
-layout OneLarge 'Atom'                    move ${hGrid}*4;0 ${hGrid}*5;${fullH}
-layout OneLarge 'Messages'                move ${hGrid}*5;${fullH}/2 ${hGrid}*2;${fullH}/2
-layout OneLarge 'Terminal'                move 0;0 ${hGrid}*5;${fullH}
+layout OneLarge 'Atom':REPEAT             move ${hGrid}*4;0 ${hGrid}*5;${height}
+layout OneLarge 'Messages'                move ${hGrid}*5;${height}/2 ${hGrid}*2;${height}/2
+layout OneLarge 'Terminal':REPEAT         move 0;0 ${hGrid}*5;${height}
 
-layout OneLarge 'Microsoft Teams':MAIN_FIRST         move 0;0 ${hGrid}*5;${fullH}*5/8
-layout OneLarge 'Microsoft Outlook':MAIN_FIRST       move 0;${fullH}*3/8 ${hGrid}*5;${fullH}*5/8
+layout OneLarge 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST     move 0;0 ${leftW};${leftH} | nudge +0 +0
+layout OneLarge 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST   move 0;${height}-${leftH} ${leftW};${leftH} | nudge +0 +0
 
+
+
+################################################################################
 # Key-bindings
-##############
+################################################################################
 
 bind 1:alt;ctrl layout OneLarge
 bind 2:alt;ctrl layout internal
