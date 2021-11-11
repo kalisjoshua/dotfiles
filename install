@@ -1,5 +1,7 @@
 #! /bin/bash
 
+echo "set completion-ignore-case On" >> ~/.inputrc
+
 for src in $(pwd)/custom/.*
 do
   if [ ! -d $src ]; then

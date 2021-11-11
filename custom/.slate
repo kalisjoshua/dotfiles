@@ -39,6 +39,23 @@ layout OneLarge 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST     move 0;0 ${leftW};$
 layout OneLarge 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST   move 0;${height}-${leftH} ${leftW};${leftH} | nudge +0 +0
 
 
+# ------------------------------------------------------------------------------
+default Superwide resolutions:3840x1600
+# ==============================================================================
+alias hGrid screenSizeX/16
+alias panelWidth ${hGrid}*6
+alias smallPanel ${hGrid}*5
+
+layout Superwide 'Firefox':REPEAT          move screenSizeX-${panelWidth};0 ${panelWidth};${height}
+
+layout Superwide 'Atom':REPEAT             move (screenSizeX-${panelWidth})/2;0 ${panelWidth};${height}
+layout Superwide 'Messages'                move ${hGrid}*5;${height}/2 ${hGrid}*2;${height}/2
+layout Superwide 'Terminal':REPEAT         move ${hGrid}*2;0 ${panelWidth};${height}
+
+layout Superwide 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST     move 0;0 ${smallPanel};${leftH} | nudge +0 +0
+layout Superwide 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST   move 0;${height}-${leftH} ${smallPanel};${leftH} | nudge +0 +0
+
+
 
 ################################################################################
 # Key-bindings
@@ -46,6 +63,7 @@ layout OneLarge 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST   move 0;${height}-${
 
 bind 1:alt;ctrl layout OneLarge
 bind 2:alt;ctrl layout internal
+bind 3:alt;ctrl layout Superwide
 bind 9:alt;ctrl grid
 bind 0:alt;ctrl relaunch
 

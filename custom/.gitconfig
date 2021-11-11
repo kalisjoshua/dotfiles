@@ -12,5 +12,5 @@
 	email = kalisjoshua@gmail.com
 [core]
 	excludesfile = ~/.gitignore
-[includeIf "gitdir:~/Pro/work/"]
-	path = ~/Pro/work/.gitconfig
+[init]
+	defaultBranch = main
