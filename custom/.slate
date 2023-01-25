@@ -20,6 +20,7 @@ layout internal 'Firefox':REPEAT          move screenSizeX*1/5;0 screenSizeX*4/5
 
 layout internal 'Terminal':REPEAT         move 0;0 screenSizeX*4/5;screenSizeY
 layout internal 'Atom':REPEAT             move 0;0 screenSizeX;screenSizeY
+layout internal 'Code':REPEAT             move 0;0 screenSizeX;screenSizeY
 layout internal 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2
 
 layout internal 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST         corner top-right resize:.7*screenSizeX;screenSizeY | nudge +0 +0
@@ -32,6 +33,7 @@ default OneLarge resolutions:3008x1692
 layout OneLarge 'Firefox':REPEAT          move ${hGrid}*6;0 screenSizeX-${hGrid}*6;${height}
 
 layout OneLarge 'Atom':REPEAT             move ${hGrid}*4;0 ${hGrid}*5;${height}
+layout OneLarge 'Code':REPEAT             move ${hGrid}*4;0 ${hGrid}*5;${height}
 layout OneLarge 'Messages'                move ${hGrid}*5;${height}/2 ${hGrid}*2;${height}/2
 layout OneLarge 'Terminal':REPEAT         move 0;0 ${hGrid}*5;${height}
 
@@ -49,6 +51,7 @@ alias smallPanel ${hGrid}*5
 layout Superwide 'Firefox':REPEAT          move screenSizeX-${panelWidth};0 ${panelWidth};${height}
 
 layout Superwide 'Atom':REPEAT             move (screenSizeX-${panelWidth})/2;0 ${panelWidth};${height}
+layout Superwide 'Code':REPEAT             move (screenSizeX-${panelWidth})/2;0 ${panelWidth};${height}
 layout Superwide 'Messages'                move ${hGrid}*5;${height}/2 ${hGrid}*2;${height}/2
 layout Superwide 'Terminal':REPEAT         move ${hGrid}*2;0 ${panelWidth};${height}
 

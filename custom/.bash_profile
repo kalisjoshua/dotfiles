@@ -9,3 +9,4 @@ source ~/.prompt
 
 export BUN_INSTALL="/Users/boat/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+. "$HOME/.cargo/env"
