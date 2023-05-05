@@ -2,6 +2,9 @@
 
 echo "set completion-ignore-case On" >> ~/.inputrc
 
+# get the bash tab-completion script
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
+
 for src in $(pwd)/custom/.*
 do
   if [ ! -d $src ]; then

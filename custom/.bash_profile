@@ -2,11 +2,11 @@
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # add git tab completion
-source /Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
 
 # customize the display of the prompt
 source ~/.prompt
 
-export BUN_INSTALL="/Users/boat/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-. "$HOME/.cargo/env"
+test -d "$HOME/.tea" && source /dev/stdin <<<"$("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=bash --silent)"
