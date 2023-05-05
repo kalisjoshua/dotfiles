@@ -9,4 +9,8 @@ fi
 # customize the display of the prompt
 source ~/.prompt
 
+export BUN_INSTALL="/Users/boat/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+. "$HOME/.cargo/env"
+
 test -d "$HOME/.tea" && source /dev/stdin <<<"$("$HOME/.tea/tea.xyz/v*/bin/tea" --magic=bash --silent)"
