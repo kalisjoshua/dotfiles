@@ -1,72 +1,67 @@
 config defaultToCurrentScreen false
 
-alias hGrid screenSizeX/12
-alias height screenSizeY
-alias leftH ${height}*5/8
-alias leftW ${hGrid}*5
+alias col 12
+alias x1 screenSizeX/${col}*1
+alias x2 screenSizeX/${col}*2
+alias x3 screenSizeX/${col}*3
+alias x4 screenSizeX/${col}*4
+alias x5 screenSizeX/${col}*5
+alias x6 screenSizeX/${col}*6
+
+alias full screenSizeY
+alias half screenSizeY/2
+alias width screenSizeX
 
 
 
-################################################################################
+###############################################################################
 # Layouts
-################################################################################
+###############################################################################
 
-
-# ------------------------------------------------------------------------------
+# -----------------------------------------------------------------------------
 default internal resolutions:2560x1600
-# ==============================================================================
-layout internal 'Google Chrome':REPEAT    move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
-layout internal 'Firefox':REPEAT          move screenSizeX*1/5;0 screenSizeX*4/5;screenSizeY
+# =============================================================================
+layout internal 'Firefox':REPEAT        move ${width}*1/5;0 ${width}*4/5;${full}
+layout internal 'Google Chrome':REPEAT  move ${width}*1/5;0 ${width}*4/5;${full}
 
-layout internal 'Terminal':REPEAT         move 0;0 screenSizeX*4/5;screenSizeY
-layout internal 'Atom':REPEAT             move 0;0 screenSizeX;screenSizeY
-layout internal 'Code':REPEAT             move 0;0 screenSizeX;screenSizeY
-layout internal 'Messages'                move screenSizeX/4;screenSizeY/2 screenSizeX/4;screenSizeY/2
+layout internal 'Terminal':REPEAT       move 0;0 ${width}*4/5;${full}
+layout internal 'Atom':REPEAT           move 0;0 ${width};${full}
+layout internal 'Code':REPEAT           move 0;0 ${width};${full}
+layout internal 'Messages'              move ${width}/4;${half} ${width}/4;${half}
 
-layout internal 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST         corner top-right resize:.7*screenSizeX;screenSizeY | nudge +0 +0
-layout internal 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST       corner top-left resize:.9*screenSizeX;screenSizeY | nudge +0 +0
-
-
-# ------------------------------------------------------------------------------
-default OneLarge resolutions:3008x1692
-# ==============================================================================
-layout OneLarge 'Firefox':REPEAT          move ${hGrid}*6;0 screenSizeX-${hGrid}*6;${height}
-
-layout OneLarge 'Atom':REPEAT             move ${hGrid}*4;0 ${hGrid}*5;${height}
-layout OneLarge 'Code':REPEAT             move ${hGrid}*4;0 ${hGrid}*5;${height}
-layout OneLarge 'Messages'                move ${hGrid}*5;${height}/2 ${hGrid}*2;${height}/2
-layout OneLarge 'Terminal':REPEAT         move 0;0 ${hGrid}*5;${height}
-
-layout OneLarge 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST     move 0;0 ${leftW};${leftH} | nudge +0 +0
-layout OneLarge 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST   move 0;${height}-${leftH} ${leftW};${leftH} | nudge +0 +0
+layout internal 'Slack'                 corner top-right resize:.7*${width};${full}
+layout internal 'Calendar'              corner top-left resize:.9*${width};${full}
 
 
-# ------------------------------------------------------------------------------
-default Superwide resolutions:3840x1600
-# ==============================================================================
-alias hGrid screenSizeX/16
-alias panelWidth ${hGrid}*6
-alias smallPanel ${hGrid}*5
+# =============================================================================
+default external resolutions:3008x1692
+# -----------------------------------------------------------------------------
+layout external 'Firefox':REPEAT        move ${x6};0 screenSizeX-${x6};${full}
+layout external 'Google Chrome':REPEAT  move ${x6};0 screenSizeX-${x6};${full}
 
-layout Superwide 'Firefox':REPEAT          move screenSizeX-${panelWidth};0 ${panelWidth};${height}
+layout external 'Atom':REPEAT           move ${x4};0 ${x5};${full}
+layout external 'Code':REPEAT           move ${x4};0 ${x5};${full}
+layout external 'Obsidian'              move ${x4};0 ${x5};${full}
 
-layout Superwide 'Atom':REPEAT             move (screenSizeX-${panelWidth})/2;0 ${panelWidth};${height}
-layout Superwide 'Code':REPEAT             move (screenSizeX-${panelWidth})/2;0 ${panelWidth};${height}
-layout Superwide 'Messages'                move ${hGrid}*5;${height}/2 ${hGrid}*2;${height}/2
-layout Superwide 'Terminal':REPEAT         move ${hGrid}*2;0 ${panelWidth};${height}
+layout external 'Messages'              move ${x5};${half} ${x2};${half}
+layout external 'Signal'                move ${x5};${half} ${x3};${half}
 
-layout Superwide 'Microsoft Teams':MAIN_FIRST,REPEAT_LAST     move 0;0 ${smallPanel};${leftH} | nudge +0 +0
-layout Superwide 'Microsoft Outlook':MAIN_FIRST,REPEAT_LAST   move 0;${height}-${leftH} ${smallPanel};${leftH} | nudge +0 +0
+layout external 'Terminal':REPEAT       move 0;0 ${x5};${full}
+
+layout external 'Slack'                 move 0;${half} ${x5};${half}
+layout external 'Calendar'              move 0;0 ${x5};${half}
+
+layout external 'Music'                 move ${x4};${half} ${x5};${half}
+# =============================================================================
 
 
 
-################################################################################
+###############################################################################
 # Key-bindings
-################################################################################
+###############################################################################
 
-bind 1:alt;ctrl layout OneLarge
+bind 1:alt;ctrl layout external
 bind 2:alt;ctrl layout internal
-bind 3:alt;ctrl layout Superwide
 bind 9:alt;ctrl grid
 bind 0:alt;ctrl relaunch
 
