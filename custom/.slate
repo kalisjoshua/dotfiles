@@ -46,7 +46,7 @@ layout external 'Obsidian'              move ${x4};0 ${x5};${full}
 layout external 'Messages'              move ${x5};${half} ${x2};${half}
 layout external 'Signal'                move ${x5};${half} ${x3};${half}
 
-layout external 'Terminal':REPEAT       move 0;0 ${x5};${full}
+layout external 'Terminal':REPEAT       move ${x1};0 ${x5};${full}
 
 layout external 'Slack'                 move 0;${half} ${x5};${half}
 layout external 'Calendar'              move 0;0 ${x5};${half}
@@ -62,6 +62,7 @@ layout external 'Music'                 move ${x4};${half} ${x5};${half}
 
 bind 1:alt;ctrl layout external
 bind 2:alt;ctrl layout internal
+bind 8:alt;ctrl corner top-right resize:${x4};${half}
 bind 9:alt;ctrl grid
 bind 0:alt;ctrl relaunch
 
