@@ -9,10 +9,13 @@
 	default = simple
 [user]
 	name = Joshua T Kalis
-	email = kalisjoshua@gmail.com
+	email = joshua.kalis@visitingmedia.com
 [core]
 	excludesfile = ~/.gitignore
 [init]
 	defaultBranch = main
 [pull]
 	rebase = true
+
+[includeIf "gitdir:~/Documents/personal/"]
+	path = ~/Documents/personal/.gitconfig-personal

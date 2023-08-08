@@ -7,6 +7,7 @@ alias x3 screenSizeX/${col}*3
 alias x4 screenSizeX/${col}*4
 alias x5 screenSizeX/${col}*5
 alias x6 screenSizeX/${col}*6
+alias x7 screenSizeX/${col}*7
 
 alias full screenSizeY
 alias half screenSizeY/2
@@ -40,7 +41,8 @@ layout external 'Firefox':REPEAT        move ${x6};0 screenSizeX-${x6};${full}
 layout external 'Google Chrome':REPEAT  move ${x6};0 screenSizeX-${x6};${full}
 
 layout external 'Atom':REPEAT           move ${x4};0 ${x5};${full}
-layout external 'Code':REPEAT           move ${x4};0 ${x5};${full}
+-- layout external 'Code':REPEAT           move ${x4};0 ${x5};${full}
+layout external 'Code':REPEAT           move ${x2};0 ${x7};${full}
 layout external 'Obsidian'              move ${x4};0 ${x5};${full}
 
 layout external 'Messages'              move ${x5};${half} ${x2};${half}
@@ -62,7 +64,8 @@ layout external 'Music'                 move ${x4};${half} ${x5};${half}
 
 bind 1:alt;ctrl layout external
 bind 2:alt;ctrl layout internal
-bind 8:alt;ctrl corner top-right resize:${x4};${half}
+bind 7:alt;ctrl corner top-right resize:${x3};${half}*.9
+bind 8:alt;ctrl corner top-right resize:${x6};${half}
 bind 9:alt;ctrl grid
 bind 0:alt;ctrl relaunch
 
