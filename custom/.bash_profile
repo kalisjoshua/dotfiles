@@ -11,7 +11,6 @@ source ~/.prompt
 
 export BUN_INSTALL="/Users/boat/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
-. "$HOME/.cargo/env"
 
 export DENO_INSTALL="/Users/kalisjoshua/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
