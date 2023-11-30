@@ -33,6 +33,7 @@ layout internal 'Messages'              move ${width}/4;${half} ${width}/4;${hal
 
 layout internal 'Slack'                 corner top-right resize:.7*${width};${full}
 layout internal 'Calendar'              corner top-left resize:.9*${width};${full}
+layout internal 'Google Calendar'       corner top-left resize:.9*${width};${full}
 
 
 # =============================================================================
@@ -52,6 +53,7 @@ layout external 'Terminal':REPEAT       move ${x1};0 ${x5};${full}
 
 layout external 'Slack'                 move 0;${half} ${x5};${half}
 layout external 'Calendar'              move 0;0 ${x5};${half}
+layout external 'Google Calendar'       move 0;0 ${x6};${half}
 
 layout external 'Music'                 move ${x4};${half} ${x5};${half}
 # =============================================================================
