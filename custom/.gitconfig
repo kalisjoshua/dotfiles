@@ -8,16 +8,15 @@
 	ui = auto
 [push]
 	default = simple
-[user]
-	name = Joshua T Kalis
-	email = joshua.kalis@visitingmedia.com
 [core]
-	excludesfile = /Users/kalisjoshua/.gitignore
+	excludesfile = ~/.gitignore
 [init]
 	defaultBranch = main
 [pull]
 	rebase = true
 
+[includeIf "gitdir:~/Documents/"]
+	path = ~/Documents/.gitconfig
 [includeIf "gitdir:~/Documents/personal/"]
 	path = ~/Documents/personal/.gitconfig-personal
 [commit]
