@@ -1,13 +1,12 @@
-#! /bin/bash
+#!/bin/sh
 
-echo "set completion-ignore-case On" >> ~/.inputrc
+# Link dotfiles
+for src in "$(pwd)"/customizations/.[!.]*; do
+    [ -e "$src" ] && ln -fs "$src" "$HOME/"
+done
 
-# get the bash tab-completion script
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash -o ~/.git-completion.bash
-
-for src in $(pwd)/custom/.*
-do
-  if [ ! -d $src ]; then
-    ln -fs $src $HOME/$(basename $src)
-  fi
+# Link scripts
+mkdir -p "$HOME/bin"
+for src in "$(pwd)"/scripts/*; do
+    [ -e "$src" ] && ln -fs "$src" "$HOME/bin/"
 done
