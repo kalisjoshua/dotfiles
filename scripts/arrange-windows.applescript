@@ -49,5 +49,6 @@ on run
 	arrange("Slack", 0, 0, 6, 3)
 	arrange("Firefox", 6, 0, 6, 6)
 	arrange("Music", 4, 3, 3, 3)
-	--arrange("Visual Studio Code", 4, 0, 6, 6)
+	-- arrange("Visual Studio Code", 4, 0, 6, 6)
+	arrange("GoLand", 2, 0, 8, 6)
 end run
