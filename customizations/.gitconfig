@@ -29,3 +29,5 @@
 	path = ~/Documents/.gitconfig
 [includeIf "gitdir:~/Documents/personal/"]
 	path = ~/Documents/personal/.gitconfig-personal
+[kaclone]
+	email = joshuakalis@khanacademy.org

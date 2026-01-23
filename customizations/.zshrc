@@ -1,11 +1,18 @@
 # Case-insensitive completion with partial-word and substring matching
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
-# Enable completions
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-  autoload -Uz compinit && compinit -i
+  # Add Homebrew's Git completions
+  fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+  # Enable completions
+  fpath=($(brew --prefix)/share/zsh-completions $fpath)
 fi
+
+# Enable Docker CLI completions.
+fpath=(/Users/joshuakalis/.docker/completions $fpath)
+
+# Initialize completions (must come after all fpath modifications)
+autoload -Uz compinit && compinit -i
 
 # Enable Git info in prompt
 autoload -Uz vcs_info
@@ -19,12 +26,6 @@ PROMPT='
 %# '
 
 alias arrange='osascript ~/bin/arrange-windows.applescript'
-
-# The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/joshuakalis/.docker/completions $fpath)
-autoload -Uz compinit
-compinit
-# End of Docker CLI completions
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
