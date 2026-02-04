@@ -3,6 +3,7 @@
 [user]
     name = Joshua Kalis
     email = joshuakalis@khanacademy.org
+	signingkey = /Users/joshuakalis/.ssh/id_ecdsa.pub
 
 # Custom Aliases
 
@@ -31,3 +32,9 @@
 	path = ~/Documents/personal/.gitconfig-personal
 [kaclone]
 	email = joshuakalis@khanacademy.org
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
+[gpg "ssh"]
+	allowedSignersFile = /Users/joshuakalis/.ssh/allowed_signers

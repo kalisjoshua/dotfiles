@@ -44,11 +44,9 @@ on run
 		set SIZE_ROW to SCREEN_HEIGHT / CONFIG_ROWS
 	end tell
 	
-	arrange("Calendar", 0, 3, 6, 3)
 	arrange("Google Calendar", 0, 3, 6, 3)
+	arrange("Gmail", 0, 3, 6, 3)
 	arrange("Slack", 0, 0, 6, 3)
 	arrange("Firefox", 6, 0, 6, 6)
 	arrange("Music", 4, 3, 3, 3)
-	-- arrange("Visual Studio Code", 4, 0, 6, 6)
-	arrange("GoLand", 2, 0, 8, 6)
 end run

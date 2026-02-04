@@ -22,7 +22,7 @@ setopt prompt_subst
 
 # Set prompt with Git branch
 PROMPT='
-%~ ${vcs_info_msg_0_}
+%F{cyan}%~%f %F{green}${vcs_info_msg_0_}%f
 %# '
 
 alias arrange='osascript ~/bin/arrange-windows.applescript'
