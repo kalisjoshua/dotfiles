@@ -1,0 +1,15 @@
+# Work identity — included by ~/.gitconfig for repos under a `khan/` directory.
+# Overrides only the email; name and signingkey are inherited from the personal default.
+# When switching employers, update the email here and the `gitdir:**/khan/**` pattern in .gitconfig.
+
+[user]
+	email = joshuakalis@khanacademy.org
+
+# Khan-specific tooling. Safe here because these tools (kaclone, repoRangers) run from
+# inside a Khan repo, where this gitdir-conditional file is loaded. Never present on a
+# personal machine, since no repo there matches the include pattern.
+# configuredRepos stays absolute — the `ka` tool does not expand `~`.
+[kaclone]
+	email = joshuakalis@khanacademy.org
+[ka "repoRangers"]
+	configuredRepos = /Users/joshuakalis/khan/frontend,/Users/joshuakalis/khan/webapp,/Users/joshuakalis/khan/districts-jobs

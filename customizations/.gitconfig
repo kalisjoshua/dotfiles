@@ -2,8 +2,8 @@
 
 [user]
 	name = Joshua Kalis
-	email = joshuakalis@khanacademy.org
-	signingkey = /Users/joshuakalis/.ssh/id_ecdsa.pub
+	email = kalisjoshua@gmail.com
+	signingkey = ~/.ssh/id_ecdsa.pub
 
 # Custom Aliases
 
@@ -26,18 +26,14 @@
 	rebase = true
 
 # Conditional Includes
+# Default identity (above) is personal. Override to work for any repo under a `khan/` directory,
+# matched anywhere on disk so it holds across machines.
 
-[includeIf "gitdir:~/Documents/"]
-	path = ~/Documents/.gitconfig
-[includeIf "gitdir:~/Documents/personal/"]
-	path = ~/Documents/personal/.gitconfig-personal
-[kaclone]
-	email = joshuakalis@khanacademy.org
+[includeIf "gitdir:**/khan/**"]
+	path = ~/.gitconfig-work
 [gpg]
 	format = ssh
 [commit]
 	gpgsign = true
 [gpg "ssh"]
-	allowedSignersFile = /Users/joshuakalis/.ssh/allowed_signers
-[ka "repoRangers"]
-	configuredRepos = /Users/joshuakalis/khan/frontend,/Users/joshuakalis/khan/webapp,/Users/joshuakalis/khan/districts-jobs
+	allowedSignersFile = ~/.ssh/allowed_signers
