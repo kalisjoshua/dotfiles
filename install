@@ -10,3 +10,14 @@ mkdir -p "$HOME/bin"
 for src in "$(pwd)"/scripts/*; do
     [ -e "$src" ] && ln -fs "$src" "$HOME/bin/"
 done
+
+# Link Claude customizations (user-level config + principles)
+mkdir -p "$HOME/.claude"
+ln -fs "$(pwd)/claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+ln -fsn "$(pwd)/claude/principles" "$HOME/.claude/principles"
+
+# Link Claude skills (one symlink per skill, leaving other ~/.claude/skills untouched)
+mkdir -p "$HOME/.claude/skills"
+for src in "$(pwd)"/claude/skills/*; do
+    [ -e "$src" ] && ln -fsn "$src" "$HOME/.claude/skills/$(basename "$src")"
+done

@@ -39,3 +39,5 @@
 	gpgsign = true
 [gpg "ssh"]
 	allowedSignersFile = /Users/joshuakalis/.ssh/allowed_signers
+[ka "repoRangers"]
+	configuredRepos = /Users/joshuakalis/khan/frontend,/Users/joshuakalis/khan/webapp,/Users/joshuakalis/khan/districts-jobs
