@@ -3,7 +3,7 @@
 [user]
 	name = Joshua Kalis
 	email = kalisjoshua@gmail.com
-	signingkey = ~/.ssh/id_ecdsa.pub
+	signingkey = ~/.ssh/id_ed25519.pub
 
 # Custom Aliases
 

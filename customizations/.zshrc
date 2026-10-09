@@ -38,7 +38,7 @@ alias arrange='osascript ~/bin/arrange-windows.applescript'
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "/Users/joshuakalis/.deno/env"
+export PATH="$HOME/.deno/bin:$PATH"
 
 quality_checks() {
     # Usage: quality_checks [--debug] [<path>]
@@ -158,3 +158,8 @@ quality_checks() {
     fi
     echo "all clean"
 }
+export PATH="$HOME/.local/bin:$PATH"
+
+# Never auto-extend Claude Code sessions to the 1M context window — it
+# requires usage credits, which are intentionally left off on this account.
+export CLAUDE_CODE_DISABLE_1M_CONTEXT=1
