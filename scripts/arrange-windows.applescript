@@ -55,6 +55,7 @@ on run
 	
 	arrangeWithProcess("Visual Studio Code", "Code", 1, 0, 9, 6)
 	arrange("Google Calendar", 0, 3, 6, 3)
+	arrange("Discord", 0, 0, 6, 3)
 	arrange("Slack", 0, 0, 6, 3)
 	arrange("Firefox", 6, 0, 6, 6)
 	arrange("Music", 4, 3, 3, 3)
